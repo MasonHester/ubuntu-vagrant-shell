@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trivia Game</title>
+        <link rel "stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            h2 {
+                color: white;
+            }
+            .header {
+                background: darkblue;
+                padding: 20px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .dropdown {
+                float: right;
+            }
+            .top-banner {
+                background: lightgray;
+                padding: 5px;
+                border: solid black 1px;
+                
+            }
+            form {
+                border: solid black 1px;
+                padding-left: 3px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container container-fluid" width="100%">
+            <div class="header">
+                <h2>
+                    New York Times Search
+                </h2>
+            </div>
+            <div class="top-banner"> Search Parameters </div>
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Search Term</label>
+                    <input type="text" class="search-term form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Number of Records to Receive</label>
+                    <select class="record-count form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Start Year (Optional)</label>
+                    <input type="text" class="start-year form-control" id="formGroupExampleInput2" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">End Year (Optional)</label>
+                    <input type="text" class="end-year form-control" id="formGroupExampleInput2" placeholder="Another input">
+                </div>
+                <button type="submit" class="submit btn btn-primary">Search</button>
+                <button type="submit" class="clear btn btn-primary">Clear Results</button>
+            </form>
+            <br>
+            <br>
+            <div class="container container-fluid" width="100%">
+                Top Articles
+                <div id="results"></div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="javascript/program.js"></script>
+    </body>
+</html>

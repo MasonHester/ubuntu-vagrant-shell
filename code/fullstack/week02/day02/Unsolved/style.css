@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Unicase');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p.fam1 {
+    font-weight: bold;
+}
+
+p.fam2{
+    font-size: 24px;
+}
+
+p.fam3 {
+    line-height: 50px;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+}
+
+h3 {
+    font-family: 'Cormorant Unicase', serif;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+
+  </div>
+
+  <script type="text/javascript">
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ["r", "p", "s"];
+
+    //vars for tracking
+
+    var wins = 0;
+    var losses = 0
+    var draws = 0;
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+
+      // Determines which key was pressed.
+      var userGuess = event.key;
+
+      // Randomly chooses a choice from the options array. This is the Computer's guess.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+      // Draw
+
+      if (userGuess == "r" && computerGuess == "r") {
+        draws++;
+      }
+
+      if (userGuess == "p" && computerGuess == "p") {
+        draws++;
+      }
+
+      if (userGuess == "s" && computerGuess == "s") {
+        draws++;
+      }
+
+      // Win
+
+      if (userGuess == "r" && computerGuess == "s") {
+        wins++;
+      }
+
+      if (userGuess == "p" && computerGuess == "r") {
+        wins++;
+      }
+
+      if (userGuess == "s" && computerGuess == "p") {
+        wins++;
+      }
+
+      // Loss
+
+      if (userGuess == "r" && computerGuess == "p") {
+        losses++;
+      }
+
+      if (userGuess == "p" && computerGuess == "s") {
+        losses++;
+      }
+
+      if (userGuess == "s" && computerGuess == "r") {
+        losses++;
+      }
+
+      var html =
+        "<p>You chose: " + userGuess + "</p>" +
+        "<p>The computer chose: " + computerGuess + "</p>" +
+        "<p>Wins: " + wins + "</p>" +
+        "<p>Losses: " + losses + "</p>" +
+        "<p>Draws: " + draws + "</p>";
+
+      document.querySelector("#game").innerHTML = html;
+    };
+  </script>
+
+</body>
+
+</html>

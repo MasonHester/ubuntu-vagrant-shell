@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Movie Name</th>
+          <th scope="col">Year</th>
+          <th scope="col">Actors</th>
+        </tr>
+      </thead>
+      <tbody id="ref">
+        <!-- Insert movie rows here -->
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // The below code fills in the first row of the table
+
+    var listMovie = ["Mr. nobody", "The+Lion+King", "The+Little+Mermaid"]
+
+    var queryURL = "https://www.omdbapi.com/?t=" + movie[i] + "&y=&plot=short&apikey=trilogy";
+
+    for(i = 0; i < listMovie.length; i++) {
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+      $("#ref").append("<tr><td>" + response.Title + "</td><td>" + response.Year + "</td><td>" + response.Actors + "</td></tr>")
+    });
+
+//    var keyword = loop()
+
+//    function loop() {
+//      for(i = 0; i < response.Actors.length; i++) {
+//        response.Actors[i];
+//      }
+//    }
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+
+      // Obtain a reference to the tbody element in the DOM
+      $("#ref").append("<tr><td>" + response.Title + "</td><td>" + response.Year + "</td><td>" + response.Actors + "</td></tr>")
+      // Create and save a reference to new empty table row
+      // Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
+      // Append the td elements to the new table row
+      // Append the table row to the tbody element
+    });
+
+    $.ajax({
+      url: queryURL2,
+      method: "GET"
+    }).then(function(response) {
+      $("#ref").append("<tr><td>" + response.Title + "</td><td>" + response.Year + "</td><td>" + response.Actors + "</td></tr>")
+    });
+    
+    $.ajax({
+      url: queryURL3,
+      method: "GET"
+    }).then(function(response) {
+      $("#ref").append("<tr><td>" + response.Title + "</td><td>" + response.Year + "</td><td>" + response.Actors + "</td></tr>")
+    });
+
+    // Repeat the above logic to add rows for two more movies of your choice
+
+    // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
+  </script>
+</body>
+
+</html>

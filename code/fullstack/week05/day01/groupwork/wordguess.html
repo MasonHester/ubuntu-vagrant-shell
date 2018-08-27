@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Hangman</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Word Guess Game</h1>
+    </header>
+
+    <p>Word: </p>
+
+    <div id="underscores"></div>
+
+    <p>Guesses: </p>
+
+    <div></div>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {        
+        //Arrays
+        
+
+        var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+        var display = [];
+
+        var wordBank = ["dog", "turtle", "tiger", "whale", "hamster"];
+
+        var alphaArray = alphabet.split("");
+
+        //New arrays        
+        newLetter = [];
+        wrongLetter = [];
+
+        //vars
+        var compChoice = wordBank[Math.floor(Math.random() * compChoice.length)];
+        console.log("computer choice: " + compChoice);
+
+        var compArray = compChoice.split("");
+        console.log("compArray: " + compArray);
+
+        var correctGuess = indexOf(userGuess, compArray);
+        console.log();
+
+        var userGuessAlpha = indexOf(userGuess, alphaArray);
+
+        var incorrectLetter = indexOf(userGuess, wrongLetter);
+
+        
+        function gameStart() {
+            compChoice();
+
+                for (i = 0; i < compArray.length; i++) {
+                display.push("_ ")
+                }
+
+            $("#underscores").text(display.join(""));
+        }
+        
+        function compChoice() {
+            a = wordBank[Math.floor(Math.random() * computerChoice.length)];
+            return a = compChoice;
+        }
+
+        function indexOf(x,y) {
+            y.indexOf(x) > -1;
+        }
+
+        document.onkeyup = function(event) {
+            userGuess = event.key;
+            console.log("User Guess: " + userGuess);
+            userGuess1 = event.keyCode;
+            console.log("User Guess KC: " + userGuess1);
+
+            if (correctGuess) {
+                for (i=0; i < choiceArr.length; i++) {
+                    if (userGuess === compArray[i]) {
+                        display[i] = userGuess
+                        $("#underscores").text(display.join(""));
+                    }
+                }
+
+            }
+
+            else if ((correctGuess !== true) && (userGuessAlpha) && (wrongLetter = false)) {
+                wrongLetter.push(userGuess);
+            }
+        }
+  
+
+            //computer word be _'s
+                // apple = _ _ _ _ _
+        
+        //user uses keyboard to guess letters
+            //limited to a-z
+        
+        //as user guesses
+
+            //if wrong store letter
+
+            //if right replace _ with correct letter
+                //apple, uguess e |=| _ _ _ _ e
+                //apple,  uguess p |=| _ p p _ e
+        
+        //only 13 guesses
+        
+    });
+  </script>
+</body>
+
+</html>

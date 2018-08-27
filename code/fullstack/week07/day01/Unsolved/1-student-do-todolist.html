@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>To Do App!</title>
+
+  <style>
+    #todo-item {
+      font-weight: 700;
+      font-size: 2em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Title -->
+  <h1>My To Do's!</h1>
+
+  <!-- Input Form -->
+  <form>
+    <span id="todo-item">To Do Item: <input id="to-do" type="text" ><input id="add-to-do" value="Add Item" type="submit"></span>
+  </form>
+
+  <hr>
+
+  <!-- To-Do List -->
+  <div id="to-dos"></div>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script>
+    //  ============================= START CODING BELOW! =============================================
+
+    var initArray = [];
+
+    var initJSON = [];
+
+    var toDoCount = 0;
+    
+    function changeLocal() {
+      for(i = 0; i < initArray.length; i++){
+        var temp = fkfk
+        temp.attr("to-do-" + i, initArray[i]);
+        initJSON.push(initArray[i]);
+      }
+
+      localStorage.setItem("initJSON", JSON.stringify(initJSON));
+      console.log(initJSON);
+    }
+
+    $("#add-to-do").on("click", function(event) {
+      event.preventDefault();
+
+      var $toDo = $("#to-do").val().trim();
+      initArray.push($toDo);
+
+      $("#to-do").val('');
+
+      changeLocal();
+      //writeList();
+    });
+
+
+    // function changeLocal() {
+    //   localStorage.setItem("initArray", (initArray));
+    // }
+
+    // function writeList() {
+      
+    //   var toDoArray = localStorage.getItem("initArray");
+
+    //   $("#to-dos").empty();
+    //   toDoCount = 0;
+
+    //   for(i = 0; i < toDoArray.length; i++) {
+    //     var $toDoPar = $("<p>");
+    //     $toDoPar.text(toDoArray[i]);
+
+    //     var $toDoButton = $("<button>");
+            
+    //     $toDoButton.attr("id", "button-" + toDoCount);
+    //     $toDoButton.attr("data-to-do", toDoCount).addClass("checkbox");
+
+    //     var $closePar = $("<p>")
+
+    //     $closePar.text("X");
+    //     $toDoButton.append($closePar);
+
+    //     $toDoPar.prepend($toDoButton);
+
+    //     $("#to-dos").append($toDoPar);
+
+    //     toDoCount++;
+    //   }
+    // }
+
+    // $("#add-to-do").on("click", function(event) {
+    //   event.preventDefault();
+
+    //   var $toDo = $("#to-do").val().trim();
+    //   initArray.push($toDo);
+
+    //   $("#to-do").val('');
+
+    //   changeLocal();
+    //   writeList();
+    // });
+
+    // $(document.body).on("click", ".checkbox", function() {
+    //   console.log("clicked");
+
+    //   var $toDoNumber = $(this).attr("data-to-do");
+    //   console.log($(this).attr("data-to-do"));
+
+    //   console.log(toDoArray);
+
+    //   toDoArray.splice($toDoNumber, 1);
+
+    //   console.log(toDoArray);
+
+    //   changeArray();
+    //   writeList();
+    // });
+  </script>
+
+</body>
+
+</html>
