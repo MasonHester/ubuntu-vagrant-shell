@@ -50,8 +50,22 @@ function runSearch() {
       case "Search for a specific song":
         songSearch();
         break;
+      case "See if a song and album were on the top lists at the same time":
+      ex();
+      break;                
       }
     });
+}
+
+function ex() {
+  inquierer.prompt({
+    name: "artist",
+    type: "input",
+    message: "what artist?"
+  }).then(function(answer) {
+    var querySongs = `SELECT year FROM Top5000 WHERE Artist = ${answer.artist}`;
+    connection.query(querySongs, )
+  })
 }
 
 function artistSearch() {
@@ -62,15 +76,16 @@ function artistSearch() {
       message: "What artist would you like to search for?"
     })
     .then(function(answer) {
-      var query = "SELECT position, song, year FROM top5000 WHERE ?";
-      connection.query(query, { artist: answer.artist }, function(err, res) {
+      var query = "SELECT RawPopScore, Song, Year FROM Top5000 WHERE ?";
+      connection.query(query, { Artist: answer.artist }, function(err, res) {
         for (var i = 0; i < res.length; i++) {
-          console.log("Position: " + res[i].position + " || Song: " + res[i].song + " || Year: " + res[i].year);
+          console.log("Position: " + res[i].RawPopScore + " || Song: " + res[i].Song + " || Year: " + res[i].Year);
         }
         runSearch();
       });
     });
 }
+//Change below
 
 function multiSearch() {
   var query = "SELECT artist FROM top5000 GROUP BY artist HAVING count(*) > 1";
